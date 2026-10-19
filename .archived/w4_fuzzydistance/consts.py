@@ -8,15 +8,15 @@ EMBEDDING_DATA_FILE_NAME = "range_embeddings.jsonl"
 COMPARISON_DATA_FILE_NAME = "range_embedding_scores.csv"
 HISTOGRAM_OUTPUT_DIRECTORY = "similarity_distributions"
 
-# global toggle to allow ollama calls - if disabled prevents locking up on slower machines, defaults to False
+# toggle ollama calls, disable on slow machines to avoid lock ups
 OLLAMA_ENABLED = True
 UNDEFINED_KEY = "UNDEFINED"
 
-# enable to log messy errors for inspecting data shapes
-# mostly relevant in strip_range_data.py
+# log extra errors to check data shapes
+# mostly used in strip_range_data.py
 DEBUG_MODE = True
 
-# used to convert month names to numbers for fuzzy range extraction
+# month name to number lookup
 MONTHS = {
     "jan": 1, "january": 1,
     "feb": 2, "february": 2,

@@ -9,36 +9,29 @@ import json
 import re
 
 """
-Script to extract explicit time ranges from TimeQA question text.
-Use -h for help on script
+extracts explicit date ranges from timeqa question text
+use -h for help
 
-Input:
-    JSONL file with at least {"idx": ..., "question": ...}
-Output:
-    CSV (optional) + JSONL containing one row per range occurrence, as well as questions without explicit ranges (for review).
-    Always outputs to raw_data directory. The output file is named based on the input file stem, e.g. human_test_easy.jsonl -> human_test_easy_ranges.jsonl
+input: jsonl with at least {"idx": ..., "question": ...}
+output (in raw_data):
+    <input stem>.jsonl - one row per range found
+    <input stem>.csv - optional, see OUTPUT_CSV
+    no_explicit_range/<input stem>_no_explicit_range.jsonl - questions without ranges, for review
 
-e.g. example usage:
-    python3 src/w4_fuzzydistance/strip_questions.py data/timeqa/dataset/human_test_easy.json
-    python3 src/w4_fuzzydistance/strip_questions.py data/timeqa/dataset/human_test_hard.json
-    python3 src/w4_fuzzydistance/strip_questions.py data/timeqa/dataset/test_easy.json
-    python3 src/w4_fuzzydistance/strip_questions.py data/timeqa/dataset/test_hard.json
+usage (from repo root):
+    python3 .archived/w4_fuzzydistance/strip_questions.py data/timeqa/dataset/human_test_easy.json
+    (same for human_test_hard, test_easy, test_hard)
 
-The script preserves raw date precision:
-- bare year:  YYYY, precision=year
-- month-year: YYYY-MM, precision=month
-
-For interval filtering, it also includes broad min/max calendar bounds:
-- year-only start: YYYY-01-01 to YYYY-12-31
-- month-year start: first to last day of that month
+keeps raw date precision (year, month or day) plus min/max calendar bounds
+e.g. 1935 -> 1935-01-01 to 1935-12-31, nov 1935 -> 1935-11-01 to 1935-11-30
 """
 
-#TODO - remove broad functionality, potentially combine this script with strip_range_data.py to avoid duplication of work
+#TODO remove broad bounds, maybe merge with strip_range_data.py to avoid duplicate work
 
-# when called from w4main the access function should be strip_questions()
+# entry point when called from main.py
 __all__ = ['strip_questions']
 
-# Script can also output CSV but JSON-lines is more appropriate for processing and embedding so disabled by default. If you want CSV output, set this to True.
+# set True for csv output too (off by default, jsonl suits processing)
 OUTPUT_CSV = False
 
 MONTH_RE = r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec|January|February|March|April|May|June|July|August|September|October|November|December)"
@@ -79,7 +72,7 @@ class ExtractedRange:
 
 
 def split_idx(idx: str) -> tuple[str, str]:
-    # Example: /wiki/Sabine_Hossenfelder#P937#0
+    # e.g. /wiki/Sabine_Hossenfelder#P937#0
     parts = idx.split("#")
     entity_slug = parts[0].replace("/wiki/", "") if parts else ""
     relation_code = parts[1] if len(parts) > 1 else ""
@@ -187,10 +180,10 @@ def write_outputs(rows: list[ExtractedRange], no_range: list[dict], output_file_
     no_range_directory = output_file_path.parent / INVALID_RAW_DATA_DIRECTORY
     no_range_directory.mkdir(parents=True, exist_ok=True)
     
-    no_range_path = no_range_directory / "_no_explicit_range.jsonl"
+    no_range_path = no_range_directory / f"{output_file_path.stem}_no_explicit_range.jsonl"
 
     fieldnames = list(asdict(rows[0]).keys()) if rows else []
-     # No rows to write, exit early & flag - encountered as regex issue early on
+    # no rows, exit early & flag (was a regex issue early on)
     if not fieldnames:
         print(f"No rows to write for output path: {output_file_path}")
         return
@@ -213,15 +206,15 @@ def write_outputs(rows: list[ExtractedRange], no_range: list[dict], output_file_
 
 
 """
-Strip questions and extract date ranges.
-Uses function arguments rather than command line arguments, so can be called from other scripts.
+strip questions and extract date ranges
+takes a path instead of cli args so other scripts can call it
 """
 def strip_questions(input_file: Path) -> None:
     script_base_directory = Path(__file__).resolve().parent
     output_file_path = script_base_directory / RAW_DATA_DIRECTORY / input_file.stem
 
     rows, no_range = extract_ranges(input_file)
-    # disabling CSV output as JSON-lines appropriate for processing
+    # csv only if OUTPUT_CSV
     write_outputs(rows, no_range, output_file_path)
 
     questions_with_ranges = len({row.idx for row in rows})

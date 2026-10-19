@@ -1,14 +1,13 @@
 import json
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
-from consts import DEBUG_MODE, EMBEDDING_DATA_FILE_NAME, EXTRACTED_DATA_FILE_NAME, PROCESSED_DATA_PATH
+from consts import DEBUG_MODE, EMBEDDING_DATA_FILE_NAME, EXTRACTED_DATA_FILE_NAME, PROCESSED_DATA_PATH, UNDEFINED_KEY
 
 """
-embed_processing.py
-This module handles the embedding of range data using the SentenceTransformer model.
+embeds range data with a sentence transformer model
 """
 
-# enable to check basic functionality with simple text data (faster than embedding the full range data)
+# enable to test with a few sample texts (faster than full range data)
 TEST_MODE = False
 
 
@@ -20,7 +19,7 @@ def write_embeddings(output_path: Path):
     model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
     range_data_path = Path(__file__).resolve().parent / PROCESSED_DATA_PATH / EXTRACTED_DATA_FILE_NAME
 
-    # load data & extract the range_numeric and range_fuzzy for embedding whilst keying by output_id to match back
+    # load range_numeric & range_fuzzy texts, keep output_id to match back
     with range_data_path.open("r", encoding="utf-8") as f:
         for line_number, line in enumerate(f, start=1):
             if not line.strip():
@@ -42,7 +41,7 @@ def write_embeddings(output_path: Path):
             records.append(obj["output_id"])
 
             # verify shape
-            row_has_language = obj.get("range_language") is not None
+            row_has_language = obj.get("range_language") not in (None, UNDEFINED_KEY)
             if has_language_embeddings is None:
                 has_language_embeddings = row_has_language
             elif has_language_embeddings != row_has_language:
@@ -55,16 +54,15 @@ def write_embeddings(output_path: Path):
             else:
                 texts.extend([obj["range_numeric"], obj["range_fuzzy"]])
 
-    # preserve order of records and texts, so that embeddings can be matched back to the correct output_id
+    # order kept so embeddings match back to output_id
     embeddings = model.encode(
         texts,
         normalize_embeddings=True,
     )
 
-    # if range_language not present there are 2 embeddings per output_id, else 3 embeddings per output_id
+    # 3 embeddings per output_id with range_language, else 2
     if has_language_embeddings:
-        # handling for range_language present:
-        # indices of embeddings are 3x the position of the output_id in records, since each output_id has 3 embeddings (range_numeric, range_fuzzy, and range_language)
+        # with range_language: numeric, fuzzy, language at position * 3
         with output_path.open("w", encoding="utf-8") as f:
             for position, output_id in enumerate(records):
                 embedding_position = position * 3
@@ -79,8 +77,7 @@ def write_embeddings(output_path: Path):
 
                 f.write(json.dumps(row, ensure_ascii=False) + "\n")
     else:
-        # handling for no range_language:
-        # indices of embeddings are 2x the position of the output_id in records, since each output_id has 2 embeddings (range_numeric and range_fuzzy)
+        # without range_language: numeric, fuzzy at position * 2
         with output_path.open("w", encoding="utf-8") as f:
             for position, output_id in enumerate(records):
                 embedding_position = position * 2
@@ -97,7 +94,7 @@ def write_embeddings(output_path: Path):
 
 
 """
-Test embedding functionality.
+test embedding with sample texts
 """
 def test_embeddings(output_path: Path):
     model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
@@ -109,8 +106,8 @@ def test_embeddings(output_path: Path):
     ]
 
     embeddings = model.encode(texts, normalize_embeddings=True)
-    # convert to dict and write to jsonl (key is the text converted to embedding, value is the embedding vector)
-    #TODO - later will need to make this dict into range text vs fuzzy text keys/embeddings, or could use this embeddings jsonl as a lookup
+    # write each text and its vector as a jsonl row
+    #TODO split into range vs fuzzy keys, or use this file as a lookup
     with output_path.open("w", encoding="utf-8") as f:
         for text, embedding in zip(texts, embeddings):
             row = {

@@ -1,44 +1,43 @@
 """
-This weeks experiment is comparing embedding distance between explicit date ranges and fuzzy date ranges, using TimeQA questions as the source data.
-w4_fuzzydistance intended as a self-contained module - this is an access function to call the other scripts in this module
+week 4 experiment - compares embedding distance between explicit and fuzzy date ranges, using timeqa questions
+self-contained module, this runs the other scripts in order
 
-(This script assumes that the other scripts are in the same directory as this file)
-Expected directory structures:
-    ./data/
+expected layout (from repo root):
+    data/
         timeqa/
             dataset/
                 human_test_easy.json
                 human_test_hard.json
                 test_easy.json
                 test_hard.json
-    ./src/
+    .archived/
         w4_fuzzydistance/
-            embed_range_data.py
+            consts.py
+            embed_processing.py
+            embed_reporting.py
+            main.py
             strip_questions.py
             strip_range_data.py
-            consts.py
-            main.py
 """
 
-from embed_processing import main as embed_main
-from embed_reporting import main as embed_report
 from strip_questions import strip_questions
 from strip_range_data import strip_ranges
 from pathlib import Path
 
-# defaults to using easy questions as regex not updated for hard
+# easy only by default, regex not updated for hard
 USE_EASY = True
 USE_HARD = False
-# model loading takes time, disable this if you want to just run the question stripping and range extraction without embedding
+# disable to skip embedding (model load is slow)
 EXTRACT_EMBEDDINGS = True
 
 
 def _process_timeqa_question_files():
+    dataset_path = Path(__file__).resolve().parents[2] / "data" / "timeqa" / "dataset"
     test_paths = {
-        "test_easy": Path("data/timeqa/dataset/test_easy.json"),
-        "test_hard": Path("data/timeqa/dataset/test_hard.json"),
-        "human_test_easy": Path("data/timeqa/dataset/human_test_easy.json"),
-        "human_test_hard": Path("data/timeqa/dataset/human_test_hard.json"),
+        "test_easy": dataset_path / "test_easy.json",
+        "test_hard": dataset_path / "test_hard.json",
+        "human_test_easy": dataset_path / "human_test_easy.json",
+        "human_test_hard": dataset_path / "human_test_hard.json",
     }
 
     if USE_EASY:
@@ -69,24 +68,26 @@ def _process_timeqa_question_files():
 
 
 def main():
-    # Step 1: Strip questions from relevant dataset
+    # step 1: strip questions from dataset
     _process_timeqa_question_files()
 
-    # Step 2: Process the extracted ranges to create fuzzy categories
-    # (no arguments required, function self-contained)
+    # step 2: build fuzzy ranges from extracted ranges
+    # (no args needed)
     print("Processing extracted ranges to authorative data file...")
     strip_ranges()
 
     if EXTRACT_EMBEDDINGS:
-        # Step 3 & 4 are optional
-        #TODO - separate reporting from embedding to allow for re-running the report without re-embedding (use authorative data file as input)
-        # Embed the range data
+        from embed_processing import main as embed_main
+        from embed_reporting import main as embed_report
+        # steps 3 & 4 optional
+        #TODO split reporting from embedding so the report can rerun without re-embedding (use authorative data file as input)
+        # step 3: embed range data
         embed_main()
-        # Compare and visualise
+        # step 4: compare and plot
         embed_report()
 
 
-#TODO add CLI args
+#TODO add cli args
 if __name__ == "__main__":
     main()
 
