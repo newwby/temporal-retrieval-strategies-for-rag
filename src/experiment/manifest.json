@@ -1,0 +1,218 @@
+{
+    "pilot_test": {
+        "model_name": "all-MiniLM-L6-v2",
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "baseline": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": 30,
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "manifest_test": {
+        "model_name": [
+            "all-MiniLM-L6-v2",
+            "all-mpnet-base-v2"
+        ],
+        "k": [
+            3,
+            5,
+            7
+        ],
+        "retriever": "faiss",
+        "model_aliases": {
+            "all-MiniLM-L6-v2": "minilm",
+            "all-mpnet-base-v2": "mpnet"
+        },
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "entity_upper_bound": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": 30,
+        "entity_filter": [
+            true,
+            false
+        ],
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "retriever_test": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": 30,
+        "retriever": [
+            "faiss",
+            "bm25"
+        ],
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "phrasing_test": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": [
+            1,
+            3,
+            5
+        ],
+        "phrasing": [
+            "source",
+            "numeric",
+            "fuzzy",
+            "language",
+            "delete"
+        ],
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "multi_gold_train_test": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": [
+            1,
+            3,
+            5
+        ],
+        "query_source": "train",
+        "metrics": [
+            "hit_at_k",
+            "precision_at_k",
+            "recall_at_k",
+            "mrr"
+        ],
+        "gold_filter": "multi_gold"
+    },
+    "question_form_test": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": 30,
+        "question_form": [
+            "timeqa_source",
+            "timeqa_alt",
+            "declarative",
+            "keyword",
+            "time_first",
+            "no_relation"
+        ],
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "encoding_smoke": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": 30,
+        "corpus_encoding": [
+            "source",
+            "numeric"
+        ],
+        "phrasing": [
+            "source",
+            "numeric"
+        ],
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "encoding_grid": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": 30,
+        "corpus_encoding": [
+            "source",
+            "numeric",
+            "fuzzy",
+            "language",
+            "delete"
+        ],
+        "phrasing": [
+            "source",
+            "numeric",
+            "fuzzy",
+            "language",
+            "delete"
+        ],
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "temporal_filtering_test": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": [
+            1,
+            3,
+            5
+        ],
+        "temporal_filter": [
+            "none",
+            "exclude",
+            "rerank"
+        ],
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "temporal_filtering_k30": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": 30,
+        "temporal_filter": [
+            "none",
+            "exclude",
+            "rerank"
+        ],
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "model_sweep": {
+        "model_name": [
+            "all-MiniLM-L6-v2",
+            "all-mpnet-base-v2",
+            "BAAI/bge-base-en-v1.5"
+        ],
+        "k": [
+            1,
+            3,
+            5
+        ],
+        "retriever": "faiss",
+        "model_aliases": {
+            "all-MiniLM-L6-v2": "minilm",
+            "all-mpnet-base-v2": "mpnet",
+            "BAAI/bge-base-en-v1.5": "bge-base"
+        },
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    },
+    "bm25": {
+        "model_name": "all-MiniLM-L6-v2",
+        "k": [
+            1,
+            3,
+            5
+        ],
+        "retriever": "bm25",
+        "model_aliases": {
+            "all-MiniLM-L6-v2": "minilm"
+        },
+        "metrics": [
+            "hit_at_k",
+            "mrr"
+        ]
+    }
+}
