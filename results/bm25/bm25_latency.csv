@@ -1,0 +1,4 @@
+run,retrieval_latency,index_resolve_latency,mutate_latency,total_latency,index_build_count,index_build_total_seconds,index_build_mean_seconds,index_cache_hit_rate,index_build_effective_seconds,index_build_attributed
+k1,0.05929596237781236,0.0,9.569297202465054e-06,0.05930553167501482,0,0,0.0,1.0,0.0,False
+k3,0.05951523190019349,0.0,9.663873919820108e-06,0.05952489577411331,0,0,0.0,1.0,0.0,False
+k5,0.05948759861563077,0.0,9.8661565996439e-06,0.05949746477223042,0,0,0.0,1.0,0.0,False

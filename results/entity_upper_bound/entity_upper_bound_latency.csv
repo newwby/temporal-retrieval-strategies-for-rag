@@ -1,0 +1,3 @@
+run,retrieval_latency,index_resolve_latency,mutate_latency,total_latency,index_build_count,index_build_total_seconds,index_build_mean_seconds,index_cache_hit_rate,index_build_effective_seconds,index_build_attributed
+k30_entityfilter-on,0.006950579356408602,0.002180201458593548,7.904076570172695e-06,0.009138684891572322,737,5.829858700279146,0.00791025603837062,0.7243829468960359,0.00791025603837062,False
+k30_entityfilter-off,0.015615097307644488,0.0,1.1606132847597584e-05,0.015626703440492086,0,0,0.0,1.0,0.0,False

@@ -1,0 +1,34 @@
+{
+  "threshold": 0.10004018263325301,
+  "overall": {
+    "n": 40110,
+    "hit_rate": 0.2074046372475692,
+    "mean_chrf": 0.0798873080031591,
+    "mean_chrf_hit": 0.10004018263325301,
+    "mean_chrf_miss": 0.07461374743420088,
+    "miss_count": 31791,
+    "false_close_count": 4887,
+    "false_close_rate": 0.15372275172218552
+  },
+  "numeric": {
+    "n": 0,
+    "hit_rate": 0.0,
+    "mean_chrf": 0.0,
+    "mean_chrf_hit": 0.0,
+    "mean_chrf_miss": 0.0,
+    "miss_count": 0,
+    "false_close_count": 0,
+    "false_close_rate": 0.0
+  },
+  "textual": {
+    "n": 40110,
+    "hit_rate": 0.2074046372475692,
+    "mean_chrf": 0.0798873080031591,
+    "mean_chrf_hit": 0.10004018263325301,
+    "mean_chrf_miss": 0.07461374743420088,
+    "miss_count": 31791,
+    "false_close_count": 4887,
+    "false_close_rate": 0.15372275172218552
+  },
+  "overstatement_pp": -15.372275172218552
+}

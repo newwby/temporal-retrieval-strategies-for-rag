@@ -1,0 +1,4 @@
+run,retrieval_latency,index_resolve_latency,mutate_latency,total_latency,index_build_count,index_build_total_seconds,index_build_mean_seconds,index_cache_hit_rate,index_build_effective_seconds,index_build_attributed
+k30_temporalmode-none,0.015474010957840331,0.0,1.0917053099759286e-05,0.015484928010940091,0,0,0.0,1.0,0.0,False
+k30_temporalmode-exclude,0.019006465183708205,0.3838115404637974,9.396484491039867e-06,0.40282740213199664,1102,1026.3120592001942,0.9313176580764013,0.5878833208676141,0.9313176580764013,False
+k30_temporalmode-rerank,0.01518903907983412,0.0,1.1058750986584818e-05,0.015200097830820705,0,0,0.0,1.0,0.0,False
