@@ -1,0 +1,59 @@
+{
+  "_README": [
+    "question forms for the question_form axis",
+    "",
+    "uses timeqa's slots, so this file and the relations.json templates share one renderer (question_form.py):",
+    "  $1  subject           - entity link as text, e.g. 'Ian Gibson (politician)'",
+    "  $2  point expression  - e.g. 'in May 1997'      (mode 'pointwise')",
+    "  $4  range expression  - e.g. 'from May 1997 to May 2001' (mode 'accumulate')",
+    "  $m  relation meaning  - e.g. 'position held'    (added, not in timeqa)",
+    "",
+    "relation_mode picks the variant of an authored form, like timeqa's templates. 'n/a' uses accumulate",
+    "",
+    "kind:",
+    "  dataset_verbatim - timeqa's question as is, the control",
+    "  dataset_template - the relation's own template at template_index. 174 of 2674 scored dev rows",
+    "                     have one template, so index > 0 doesn't apply to all rows (hence applied/applicable)",
+    "  authored         - our own forms, apply to every row as $m covers all 52 relation codes in dev"
+  ],
+
+  "timeqa_source": {
+    "kind": "dataset_verbatim",
+    "description": "timeqa's question text as is, the control"
+  },
+
+  "timeqa_alt": {
+    "kind": "dataset_template",
+    "template_index": "first_differing",
+    "description": "the relation's first own template that doesn't match timeqa's question, a real timeqa alternative. a fixed index would leave ~35% of rows the same as the control, as timeqa picked templates per question"
+  },
+
+  "declarative": {
+    "kind": "authored",
+    "description": "no question framing, just subject, relation, time",
+    "accumulate": "$1 $m $4",
+    "pointwise": "$1 $m $2"
+  },
+
+  "keyword": {
+    "kind": "authored",
+    "description": "search style, content words only, no function words or punctuation",
+    "accumulate": "$1 $m $4",
+    "pointwise": "$1 $m $2",
+    "strip_function_words": true
+  },
+
+  "time_first": {
+    "kind": "authored",
+    "description": "same tokens as declarative with the time moved to the front, only the date position changes",
+    "accumulate": "$4 $1 $m",
+    "pointwise": "$2 $1 $m"
+  },
+
+  "no_relation": {
+    "kind": "authored",
+    "description": "no relation, tests how much retrieval relies on the relation phrase",
+    "accumulate": "$1 $4",
+    "pointwise": "$1 $2"
+  }
+}

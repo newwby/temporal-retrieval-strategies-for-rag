@@ -1,0 +1,31 @@
+{
+  "config_name": "train",
+  "corpus_generated_at": "2026-08-25T16:40:03.037223",
+  "corpus": {
+    "total_paragraphs": 149771,
+    "dated": 83449,
+    "dated_pct": 0.5571772906637467,
+    "undated": 66322,
+    "undated_pct": 0.44282270933625334,
+    "span_over_100y": 1246,
+    "span_over_100y_pct_of_dated": 0.014931275389759014,
+    "span_over_100y_pct_of_all": 0.008319367567820205,
+    "span_width_min": 1,
+    "span_width_max": 1022,
+    "span_width_median": 1
+  },
+  "gold_survival_generated_at": "2026-08-25T16:40:05.058742",
+  "gold_survival": {
+    "scored_queries": 12532,
+    "gold_docs_checked": 13721,
+    "survive": 10766,
+    "survive_pct": 0.7846366882880257,
+    "no_date_metadata": 1638,
+    "no_date_metadata_pct": 0.11937905400481015,
+    "non_overlapping": 1317,
+    "non_overlapping_pct": 0.0959842577071642,
+    "missing_from_corpus": 0,
+    "fully_excluded_queries": 2595,
+    "fully_excluded_queries_pct": 0.20706990105330356
+  }
+}

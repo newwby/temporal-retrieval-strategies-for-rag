@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "sources": [
+            {"annotated_path": "data/timeqa/dataset/annotated_dev.json", "easy_path": "data/timeqa/dataset/dev.easy.json"}
+        ]
+    },
+
+    "train": {
+        "sources": [
+            {"annotated_path": "data/timeqa/dataset/annotated_train.json", "easy_path": "data/timeqa/dataset/train.easy.json.gzip"}
+        ]
+    },
+
+    "dev_plus_train": {
+        "sources": [
+            {"annotated_path": "data/timeqa/dataset/annotated_dev.json", "easy_path": "data/timeqa/dataset/dev.easy.json"},
+            {"annotated_path": "data/timeqa/dataset/annotated_train.json", "easy_path": "data/timeqa/dataset/train.easy.json.gzip"}
+        ]
+    }
+}

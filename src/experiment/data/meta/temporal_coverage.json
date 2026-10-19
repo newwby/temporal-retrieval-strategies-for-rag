@@ -1,0 +1,31 @@
+{
+  "config_name": "dev",
+  "corpus_generated_at": "2026-08-25T16:39:51.161785",
+  "corpus": {
+    "total_paragraphs": 32678,
+    "dated": 17391,
+    "dated_pct": 0.5321929126629537,
+    "undated": 15287,
+    "undated_pct": 0.46780708733704635,
+    "span_over_100y": 285,
+    "span_over_100y_pct_of_dated": 0.01638778678626876,
+    "span_over_100y_pct_of_all": 0.008721463981883837,
+    "span_width_min": 1,
+    "span_width_max": 1017,
+    "span_width_median": 1
+  },
+  "gold_survival_generated_at": "2026-08-25T16:39:51.519273",
+  "gold_survival": {
+    "scored_queries": 2674,
+    "gold_docs_checked": 2927,
+    "survive": 2230,
+    "survive_pct": 0.7618722241202597,
+    "no_date_metadata": 415,
+    "no_date_metadata_pct": 0.1417833959685685,
+    "non_overlapping": 282,
+    "non_overlapping_pct": 0.09634437991117185,
+    "missing_from_corpus": 0,
+    "fully_excluded_queries": 604,
+    "fully_excluded_queries_pct": 0.22587883320867613
+  }
+}
