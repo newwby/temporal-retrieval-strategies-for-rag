@@ -21,5 +21,5 @@ src/experiment/visualisation/**/*.png
 results/run_dirs.json
 
 # w4 exploration data, rebuilt by its strip_* scripts
-exploration/w4_fuzzydistance/raw_data/
-exploration/w4_fuzzydistance/processed_data/
+.archived/w4_fuzzydistance/raw_data/
+.archived/w4_fuzzydistance/processed_data/
