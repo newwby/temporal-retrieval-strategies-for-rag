@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+
+# timeqa benchmark - fetch it yourself, see readme
+data/timeqa/
+
+# model cache and vector stores, rebuilt on first run
+models/
+**/chroma_db/
+
+# pipeline outputs, all regenerated
+src/experiment/data/indexing/
+src/experiment/data/results/
+src/experiment/data/corpus/*.jsonl
+src/experiment/data/queries/*.jsonl
+src/experiment/visualisation/_metadata.jsonl
+src/experiment/visualisation/**/*.png
+results/run_dirs.json
+
+# w4 exploration data, rebuilt by its strip_* scripts
+exploration/w4_fuzzydistance/raw_data/
+exploration/w4_fuzzydistance/processed_data/
