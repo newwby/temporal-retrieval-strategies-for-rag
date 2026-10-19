@@ -1,3 +1,0 @@
-# subfolder gitignore to handle data directories specified in consts.py
-raw_data/
-processed_data/
