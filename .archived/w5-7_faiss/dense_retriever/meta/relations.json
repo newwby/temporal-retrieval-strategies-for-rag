@@ -1,0 +1,410 @@
+{
+  "P54": {
+    "meaning": "member of sports team",
+    "mode": "accumulate"
+  },
+  "P39": {
+    "meaning": "position held",
+    "mode": "accumulate"
+  },
+  "P166": {
+    "meaning": "award received",
+    "mode": "pointwise"
+  },
+  "P108": {
+    "meaning": "employer",
+    "mode": "accumulate"
+  },
+  "P131": {
+    "meaning": "located in the administrative territorial entity",
+    "mode": "accumulate"
+  },
+  "P7256": {
+    "meaning": "computer performance",
+    "mode": "n/a"
+  },
+  "P69": {
+    "meaning": "educated at",
+    "mode": "accumulate"
+  },
+  "P1411": {
+    "meaning": "nominated for",
+    "mode": "pointwise"
+  },
+  "P793": {
+    "meaning": "significant event",
+    "mode": "accumulate"
+  },
+  "P937": {
+    "meaning": "work location",
+    "mode": "accumulate"
+  },
+  "P127": {
+    "meaning": "owned by",
+    "mode": "accumulate"
+  },
+  "P463": {
+    "meaning": "member of",
+    "mode": "pointwise"
+  },
+  "P1831": {
+    "meaning": "electorate",
+    "mode": "n/a"
+  },
+  "P1448": {
+    "meaning": "official name",
+    "mode": "accumulate"
+  },
+  "P527": {
+    "meaning": "has part",
+    "mode": "accumulate"
+  },
+  "P2962": {
+    "meaning": "title of chess person",
+    "mode": "pointwise"
+  },
+  "P17": {
+    "meaning": "country",
+    "mode": "accumulate"
+  },
+  "P172": {
+    "meaning": "ethnic group",
+    "mode": "accumulate"
+  },
+  "P1435": {
+    "meaning": "heritage designation",
+    "mode": "accumulate"
+  },
+  "P1346": {
+    "meaning": "winner",
+    "mode": "n/a"
+  },
+  "P102": {
+    "meaning": "member of political party",
+    "mode": "accumulate"
+  },
+  "P6": {
+    "meaning": "head of government",
+    "mode": "accumulate"
+  },
+  "P27": {
+    "meaning": "country of citizenship",
+    "mode": "accumulate"
+  },
+  "P1352": {
+    "meaning": "ranking",
+    "mode": "n/a"
+  },
+  "P488": {
+    "meaning": "chairperson",
+    "mode": "accumulate"
+  },
+  "P361": {
+    "meaning": "part of",
+    "mode": "accumulate"
+  },
+  "P1433": {
+    "meaning": "published in",
+    "mode": "n/a"
+  },
+  "P551": {
+    "meaning": "residence",
+    "mode": "accumulate"
+  },
+  "P137": {
+    "meaning": "operator",
+    "mode": "accumulate"
+  },
+  "P190": {
+    "meaning": "twinned administrative body",
+    "mode": "accumulate"
+  },
+  "P410": {
+    "meaning": "military rank",
+    "mode": "accumulate"
+  },
+  "P26": {
+    "meaning": "spouse",
+    "mode": "accumulate"
+  },
+  "P2139": {
+    "meaning": "total revenue",
+    "mode": "n/a"
+  },
+  "P286": {
+    "meaning": "head coach",
+    "mode": "accumulate"
+  },
+  "P512": {
+    "meaning": "academic degree",
+    "mode": "n/a"
+  },
+  "P106": {
+    "meaning": "occupation",
+    "mode": "accumulate"
+  },
+  "P1308": {
+    "meaning": "officeholder",
+    "mode": "accumulate"
+  },
+  "P1037": {
+    "meaning": "director / manager",
+    "mode": "accumulate"
+  },
+  "P47": {
+    "meaning": "shares border with",
+    "mode": "accumulate"
+  },
+  "P185": {
+    "meaning": "doctoral student",
+    "mode": "n/a"
+  },
+  "P1365": {
+    "meaning": "replaces",
+    "mode": "pointwise"
+  },
+  "P176": {
+    "meaning": "manufacturer",
+    "mode": "accumulate"
+  },
+  "P1376": {
+    "meaning": "capital of",
+    "mode": "accumulate"
+  },
+  "P276": {
+    "meaning": "location",
+    "mode": "accumulate"
+  },
+  "P1128": {
+    "meaning": "employees",
+    "mode": "n/a"
+  },
+  "P150": {
+    "meaning": "contains administrative territorial entity",
+    "mode": "accumulate"
+  },
+  "P6087": {
+    "meaning": "coach of sports team",
+    "mode": "accumulate"
+  },
+  "P800": {
+    "meaning": "notable work",
+    "mode": "accumulate"
+  },
+  "P466": {
+    "meaning": "occupant",
+    "mode": "accumulate"
+  },
+  "P747": {
+    "meaning": "has edition or translation",
+    "mode": "n/a"
+  },
+  "P159": {
+    "meaning": "headquarters location",
+    "mode": "accumulate"
+  },
+  "P4100": {
+    "meaning": "parliamentary group",
+    "mode": "n/a"
+  },
+  "P175": {
+    "meaning": "performer",
+    "mode": "accumulate"
+  },
+  "P1268": {
+    "meaning": "represents",
+    "mode": "n/a"
+  },
+  "P197": {
+    "meaning": "adjacent station",
+    "mode": "accumulate"
+  },
+  "P195": {
+    "meaning": "collection",
+    "mode": "accumulate"
+  },
+  "P3643": {
+    "meaning": "significant environmental impact",
+    "mode": "n/a"
+  },
+  "P371": {
+    "meaning": "presenter",
+    "mode": "accumulate"
+  },
+  "P608": {
+    "meaning": "exhibition history",
+    "mode": "accumulate"
+  },
+  "P138": {
+    "meaning": "named after",
+    "mode": "accumulate"
+  },
+  "P97": {
+    "meaning": "noble title",
+    "mode": "accumulate"
+  },
+  "P98": {
+    "meaning": "editor",
+    "mode": "accumulate"
+  },
+  "P421": {
+    "meaning": "located in time zone",
+    "mode": "n/a"
+  },
+  "P1344": {
+    "meaning": "participant in",
+    "mode": "accumulate"
+  },
+  "P4791": {
+    "meaning": "commanded by",
+    "mode": "accumulate"
+  },
+  "P169": {
+    "meaning": "chief executive officer",
+    "mode": "accumulate"
+  },
+  "P2769": {
+    "meaning": "budget",
+    "mode": "n/a"
+  },
+  "P355": {
+    "meaning": "subsidiary",
+    "mode": "accumulate"
+  },
+  "P531": {
+    "meaning": "diplomatic mission sent",
+    "mode": "accumulate"
+  },
+  "P1366": {
+    "meaning": "replaced by",
+    "mode": "pointwise"
+  },
+  "P1416": {
+    "meaning": "affiliation",
+    "mode": "accumulate"
+  },
+  "P36": {
+    "meaning": "capital",
+    "mode": "accumulate"
+  },
+  "P121": {
+    "meaning": "item operated",
+    "mode": "accumulate"
+  },
+  "P1830": {
+    "meaning": "owner of",
+    "mode": "accumulate"
+  },
+  "P35": {
+    "meaning": "head of state",
+    "mode": "accumulate"
+  },
+  "P749": {
+    "meaning": "parent organization",
+    "mode": "accumulate"
+  },
+  "P366": {
+    "meaning": "use",
+    "mode": "accumulate"
+  },
+  "P118": {
+    "meaning": "league",
+    "mode": "accumulate"
+  },
+  "P115": {
+    "meaning": "home venue",
+    "mode": "accumulate"
+  },
+  "P1399": {
+    "meaning": "convicted of",
+    "mode": "n/a"
+  },
+  "P618": {
+    "meaning": "source of energy",
+    "mode": "accumulate"
+  },
+  "P123": {
+    "meaning": "publisher",
+    "mode": "accumulate"
+  },
+  "P840": {
+    "meaning": "narrative location",
+    "mode": "accumulate"
+  },
+  "P241": {
+    "meaning": "military branch",
+    "mode": "accumulate"
+  },
+  "P1075": {
+    "meaning": "rector",
+    "mode": "accumulate"
+  },
+  "P607": {
+    "meaning": "conflict",
+    "mode": "accumulate"
+  },
+  "P559": {
+    "meaning": "terminus",
+    "mode": "accumulate"
+  },
+  "P449": {
+    "meaning": "original broadcaster",
+    "mode": "accumulate"
+  },
+  "P264": {
+    "meaning": "record label",
+    "mode": "accumulate"
+  },
+  "P400": {
+    "meaning": "platform",
+    "mode": "accumulate"
+  },
+  "P40": {
+    "meaning": "child",
+    "mode": "pointwise"
+  },
+  "P5096": {
+    "meaning": "member of the crew of",
+    "mode": "accumulate"
+  },
+  "P734": {
+    "meaning": "family name",
+    "mode": "accumulate"
+  },
+  "P2632": {
+    "meaning": "place of detention",
+    "mode": "accumulate"
+  },
+  "P2291": {
+    "meaning": "charted in",
+    "mode": "accumulate"
+  },
+  "P710": {
+    "meaning": "participant",
+    "mode": "pointwise"
+  },
+  "P8047": {
+    "meaning": "country of registry",
+    "mode": "accumulate"
+  },
+  "P1001": {
+    "meaning": "applies to jurisdiction",
+    "mode": "accumulate"
+  },
+  "P2522": {
+    "meaning": "victory",
+    "mode": "n/a"
+  },
+  "P641": {
+    "meaning": "sport",
+    "mode": "accumulate"
+  },
+  "P411": {
+    "meaning": "canonization status",
+    "mode": "n/a"
+  },
+  "P2561": {
+    "meaning": "name",
+    "mode": "accumulate"
+  }
+}
