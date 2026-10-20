@@ -1,0 +1,4 @@
+run,retrieval_latency,index_resolve_latency,mutate_latency,total_latency,index_build_count,index_build_total_seconds,index_build_mean_seconds,index_cache_hit_rate,index_build_effective_seconds,index_build_attributed
+"k1 (multi-gold, n=1029)",0.023416117842734188,0.0,1.1948236169759035e-05,0.023428066078903947,0,0,0.0,1.0,0.0,False
+"k3 (multi-gold, n=1029)",0.023488962998694126,0.0,1.186362899368123e-05,0.023500826627687807,0,0,0.0,1.0,0.0,False
+"k5 (multi-gold, n=1029)",0.02495678440830477,0.0,1.1677130486933884e-05,0.024968461538791703,0,0,0.0,1.0,0.0,False
